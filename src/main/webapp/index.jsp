@@ -328,7 +328,7 @@
         </div>
 
         <div class="version">
-            RELEASE v1.0
+            RELEASE v2.0
         </div>
 
     </nav>
@@ -343,7 +343,7 @@
             SYSTEM OPERATIONAL
         </div>
 
-        <h1>Hello DevOps</h1>
+        <h1>Hello DevOps v2</h1>
 
         <p class="subtitle">
             Welcome to the <span class="highlight">Java DevOps Platform</span>.
