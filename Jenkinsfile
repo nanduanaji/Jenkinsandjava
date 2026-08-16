@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         AWS_REGION = 'us-east-1'
-        ECR_REPO = 'public.ecr.aws/k0c8q8z5/jenkinsecr'
+        ECR_REPO = 'public.ecr.aws/k3l8d5s4/jenkinsecr'
         IMAGE_TAG = "${BUILD_NUMBER}"
         IMAGE_URI = "${ECR_REPO}:${IMAGE_TAG}"
         KUBECONFIG = '/var/lib/jenkins/.kube/config'
