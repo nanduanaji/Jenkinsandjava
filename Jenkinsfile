@@ -46,25 +46,19 @@ pipeline {
             }
         }
 
-        stage('Login to Public ECR') {
-            steps {
-                withCredentials([
-                    usernamePassword(
-                        credentialsId: 'aws-creds',
-                        usernameVariable: 'AWS_ACCESS_KEY_ID',
-                        passwordVariable: 'AWS_SECRET_ACCESS_KEY'
-                    )
-                ]) {
-                    sh '''
-                    aws ecr-public get-login-password \
-                    --region us-east-1 | \
-                    docker login \
-                    --username AWS \
-                    --password-stdin public.ecr.aws
-                    '''
-                }
-            }
+       stage('Login to Public ECR') {
+        steps {
+            sh '''
+            aws sts get-caller-identity
+    
+            aws ecr-public get-login-password \
+            --region us-east-1 | \
+            docker login \
+            --username AWS \
+            --password-stdin public.ecr.aws
+            '''
         }
+    }
 
         stage('Build Docker Image') {
             steps {
